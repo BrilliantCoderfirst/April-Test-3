@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Test - 3</title>
+    <style>
+        .container {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .div {
+            border: "2px solid red";
+            width: "218px";
+            height: "257px";
+        }
+
+        #button {
+            margin-bottom: 20px;
+            padding: 16px 19px;
+            color: white;
+            border: none;
+            background-color: rgb(114, 114, 210);
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #button:hover {
+            background-color: blue;
+            box-shadow: 2px 3px 10px black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Given the array, print the first name, last name, email, and image (src of image is the "avatar" value of each
+        object) on to the screen</h1>
+    <button id="button">Click On
+        Please...</button>
+
+    <div class="container" id="container"></div>
+
+
+
+
+    <!-- <script src="index.js"></script> -->
+    <script>
+        const userList = [{
+	"id": 1,
+	"email": "george.bluth@reqres.in",
+	"first_name": "George",
+	"last_name": "Bluth",
+	"avatar": "https://reqres.in/img/faces/1-image.jpg"
+}, {
+	"id": 2,
+	"email": "janet.weaver@reqres.in",
+	"first_name": "Janet",
+	"last_name": "Weaver",
+	"avatar": "https://reqres.in/img/faces/2-image.jpg"
+}, {
+	"id": 3,
+	"email": "emma.wong@reqres.in",
+	"first_name": "Emma",
+	"last_name": "Wong",
+	"avatar": "https://reqres.in/img/faces/3-image.jpg"
+}, {
+	"id": 4,
+	"email": "eve.holt@reqres.in",
+	"first_name": "Eve",
+	"last_name": "Holt",
+	"avatar": "https://reqres.in/img/faces/4-image.jpg"
+}, {
+	"id": 5,
+	"email": "charles.morris@reqres.in",
+	"first_name": "Charles",
+	"last_name": "Morris",
+	"avatar": "https://reqres.in/img/faces/5-image.jpg"
+}, {
+	"id": 6,
+	"email": "tracey.ramos@reqres.in",
+	"first_name": "Tracey",
+	"last_name": "Ramos",
+	"avatar": "https://reqres.in/img/faces/6-image.jpg"
+}];
+
+
+
+const getbutton = document.getElementById('button');
+getbutton.addEventListener('click', fun1);
+
+function fun1() {
+    for (let i = 0; i < userList.length; i++) {
+        const creatdiv = document.createElement('div');
+        creatdiv.innerHTML = `
+            <img src = '${userList[i].avatar}' />
+            <h3>First Name: ${userList[i].first_name}</h3> 
+            <h3>Last Name: ${userList[i].last_name}</h3>
+            <p>${userList[i].email}</p>
+        `;
+        console.log(creatdiv);
+        creatdiv.style.border = '2px solid red';
+        creatdiv.style.width = '200px';
+        creatdiv.style.margin = '0px 15px';
+        creatdiv.style.boxShadow = '1px 1px 8px black';
+        creatdiv.style.borderRadius = '10px';
+
+        let getcontainer = document.getElementById('container');
+        getcontainer.appendChild(creatdiv);
+    }
+}
+
+    </script>
+</body>
+
+</html>
